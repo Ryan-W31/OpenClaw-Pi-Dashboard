@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/home/pi/OpenClaw-Pi-Dashboard
-Environment="PATH=/home/pi/OpenClaw-Pi-Dashboard/venv/bin"
-Environment="DASHBOARD_CONFIG=/home/pi/OpenClaw-Pi-Dashboard/config.json"
-ExecStart=/home/pi/OpenClaw-Pi-Dashboard/venv/bin/python /home/pi/OpenClaw-Pi-Dashboard/app.py
+User=imageidentity
+WorkingDirectory=/home/imageidentity/.openclaw/workspace/projects/OpenClaw-Pi-Dashboard
+Environment="PATH=/home/imageidentity/.openclaw/workspace/projects/OpenClaw-Pi-Dashboard/venv/bin"
+Environment="DASHBOARD_CONFIG=/home/imageidentity/.openclaw/workspace/projects/OpenClaw-Pi-Dashboard/config.json"
+ExecStart=/home/imageidentity/.openclaw/workspace/projects/OpenClaw-Pi-Dashboard/venv/bin/python /home/imageidentity/.openclaw/workspace/projects/OpenClaw-Pi-Dashboard/app.py
 Restart=always
 RestartSec=10
 
