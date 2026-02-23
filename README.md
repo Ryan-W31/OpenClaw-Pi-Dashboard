@@ -55,7 +55,24 @@ python app.py
 ```
 
 6. **Access the dashboard**:
+
+#### Option A: Direct LAN Access (less secure)
 Open your browser to `http://your-pi-ip:5000`
+
+#### Option B: SSH Tunnel (recommended)
+For secure access, bind the dashboard to localhost only and use an SSH tunnel:
+
+```bash
+# On your local machine, create the tunnel
+ssh -L 5000:localhost:5000 pi@192.168.1.106
+
+# Then access via: http://localhost:5000
+```
+
+**Benefits:**
+- Traffic encrypted via SSH
+- No open ports on your Pi
+- Works from anywhere you can SSH
 
 ## Configuration
 
@@ -147,6 +164,27 @@ sudo systemctl daemon-reload
 sudo systemctl enable pi-dashboard
 sudo systemctl start pi-dashboard
 ```
+
+## Secure Setup (Recommended)
+
+For production use, configure the dashboard with these security settings in `config.json`:
+
+```json
+{
+  "security": {
+    "auth_enabled": true,
+    "username": "your-username",
+    "password": "strong-password",
+    "allowed_hosts": ["127.0.0.1", "localhost"]
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": 5000
+  }
+}
+```
+
+Then access via SSH tunnel (see [Quick Start](#quick-start) Option B).
 
 ## Security Considerations
 
