@@ -1,0 +1,29 @@
+{
+  "assistant": {
+    "name": "Sak",
+    "status_indicator": true,
+    "awake_message": "{name} is Awake",
+    "sleeping_message": "{name} is Sleeping",
+    "show_status_badge": true
+  },
+  "branding": {
+    "title": "OpenClaw Pi Dashboard",
+    "theme_color": "#3b82f6"
+  },
+  "metrics": {
+    "enabled": ["cpu", "memory", "temperature", "uptime", "disk", "network"],
+    "update_interval": 2,
+    "temperature_unit": "celsius"
+  },
+  "security": {
+    "auth_enabled": false,
+    "username": "admin",
+    "password": "changeme",
+    "allowed_hosts": ["127.0.0.1", "localhost", "192.168.*", "10.*"]
+  },
+  "server": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false
+  }
+}
