@@ -16,13 +16,13 @@
     "temperature_unit": "celsius"
   },
   "security": {
-    "auth_enabled": false,
-    "username": "admin",
-    "password": "changeme",
-    "allowed_hosts": ["127.0.0.1", "localhost", "192.168.*", "10.*"]
+    "auth_enabled": true,
+    "username": "sak",
+    "password": "change-this-password",
+    "allowed_hosts": ["127.0.0.1", "localhost"]
   },
   "server": {
-    "host": "0.0.0.0",
+    "host": "127.0.0.1",
     "port": 5000,
     "debug": false
   }
